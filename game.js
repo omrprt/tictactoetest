@@ -14,6 +14,7 @@ const comp= function(){
   let x= getPattern1Move();
   if(x === -1){
     x = getPattern2Move();
+    console.log('Computer played:');
     if(x === -1){
       x = getMove();
     }
@@ -27,9 +28,10 @@ const move= function(pos,x){
   }
   if(+pos >= 0 && +pos <= 8 && !isNaN(+pos) && board[+pos] === ' '){
     board.splice(+pos,1,x);
-    currTurn= (x === X)? O: X;
+    currTurn = (x === X)? O: X;
     return true;
   }
+  console.log('Invalid Entry, enter another square number:');
   return false;
 };
 
@@ -57,7 +59,7 @@ const winner= function(){
   for( let i = 0; i<patterns3.length;i++){
     const array = boardString.match(patterns3[i][0]);
     if(array){
-      theWinner= patterns3[i][1];
+      theWinner = patterns3[i][1];
     }
   }
   if(theWinner){
