@@ -47,7 +47,7 @@ const boardFilled= function(){
   const x = getMove();
   if(x === -1){
     show();
-    console.log('Game over');
+    console.log('It\'s a tie');
     return true;
   }
   return false;
